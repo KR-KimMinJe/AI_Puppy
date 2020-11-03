@@ -1,7 +1,6 @@
 <!-- Heading -->
-# Open CV,Open VINO, NIP 기반 스마트 애완견
+# Open CV,Open VINO, NLP 기반 스마트 애완견
 # **목차**
- * ## Pi 별 실행 방법
  * ##  개요
  * ## 프로젝트 소개
  * ## 시장성 및 경쟁력 
@@ -14,16 +13,6 @@
       5. NLP 기반 자연어 처리
       6. Raspberry Pi와 통신 App
       7. Raspberry Pi간 통신
-
-
-# **Pi 별 실행 방법**
- ## 1. 자연어 처리 (python-docs-samples)
- * ## /python-docs-samples/speech_start.sh 실행
- ## 2. 서버 (workingDir)
- * ## speech서버 /workingDir/server.py 실행
- * ## App서버 /workingDir/socketServer.py 실행
- ## 3. Tracking 
- * ## process.sh 실행
 
 # **개요** 
 * ### 개발기간  2019.09.03~2019.12.12
@@ -93,15 +82,7 @@
 
 ![회로도](https://user-images.githubusercontent.com/48273803/70629092-ba8bef00-1c6c-11ea-8871-a05e378e46e3.png)
 
-   Raspberry pi GPIO 핀 설정과 구동 함수
-
-![motor 구동 설명](https://user-images.githubusercontent.com/48273803/70631472-8fa39a00-1c70-11ea-8bc5-afec22f8f182.png)
-
-   구동 함수
-
-![구동함수](https://user-images.githubusercontent.com/48273803/70631928-4869d900-1c71-11ea-9c4e-753c78b0a535.png)
-![구동함수2](https://user-images.githubusercontent.com/48273803/70631932-4a339c80-1c71-11ea-8c95-7a2fefa2fa0c.png)
-
+   
 ## 3. servo motor로 카메라 제어하기
 
    Servo Motor를 Raspberry pi와 연결하기
@@ -110,17 +91,7 @@
 
 ![servo 표](https://user-images.githubusercontent.com/48273803/70642285-48260980-1c82-11ea-9c26-0bde79d8fcfd.png)
 
-   Servo Motor 핀 설정 & 구동
-
-![servo 제어](https://user-images.githubusercontent.com/48273803/70636831-8d920900-1c79-11ea-9ab9-55d71d782ffa.png)
-
-Servo Motor detection mode
-
-![servo 올리기](https://user-images.githubusercontent.com/48273803/70651009-719b6100-1c93-11ea-80a6-08c94553ac3d.png)
-
-Servo Motor tracking mode
-
-![servo 종료](https://user-images.githubusercontent.com/48273803/70660326-3dc93700-1ca5-11ea-89a3-b9e6a9416b5b.JPG)
+  
 
 앱에서 Stop Mode 버튼 누르면 카메라가 원위치 되면서 종료
 
@@ -129,28 +100,6 @@ Servo Motor tracking mode
 ## 1. Intel Nueral Compute Stick 1 & Intel Nueral Compute Stick 2
 ![Nueral stick](https://user-images.githubusercontent.com/48273803/69005852-0a77de80-096b-11ea-8ee4-8f464e00c63c.png)
 상호간의 코드가 호환 되지 않음으로 예제 참고시 주의
-## **2. 환경구축** 
-## 환경 구축 간에 OpenCV와 OpenVINO는 각각의 가상환경에서 따로 설치할 것을 권장
-  1) Intel  Nueral Compute Stick 공식 홈 페이지 접속
-    * ![image](https://user-images.githubusercontent.com/48273803/69005936-039d9b80-096c-11ea-8556-75944f0905cf.png) <br>
-    https://docs.openvinotoolkit.org/latest/_docs_install_guides_installing_openvino_raspbian.html
-  2) 가장 최신 버전 선택<br>
-    ![image](https://user-images.githubusercontent.com/48273803/69005957-3778c100-096c-11ea-9efb-21aed84f44aa.png)
-    https://download.01.org/opencv/2019/openvinotoolkit
-  3) 자신의 개발 환경에 맞게 다운로드
-    ![image](https://user-images.githubusercontent.com/48273803/69006117-1c0eb580-096e-11ea-9f5c-80e7fd799196.png)
-    
-  3) 파일질라를 통하여 원하는 디렉터리에 zip 파일 전송
-    ![image](https://user-images.githubusercontent.com/48273803/69005959-46f80a00-096c-11ea-8d7a-01b9475bfe73.png)
-
-  4) OpenVINO 압축해제
-    ![image](https://user-images.githubusercontent.com/48273803/69005976-70189a80-096c-11ea-8d68-37795a6e715b.png)<br> $sudo tar -xf l_openvino_toolkit_runtime_raspbian_p_2019.3.334.tgz --strip 1 -C ~/OpenVINO
-  5) OpenVINO 환경변수 업데이트 및 설정<br>![image](https://user-images.githubusercontent.com/48273803/69005986-aa823780-096c-11ea-8b71-50dd2e1aaa07.png)<br> $source ~/OpenVINO/bin/setupvars.sh <재부팅시 초기화> <br> $echo "source ~/OpenVINO/bin/setupvars.sh">> ~ / .bashrc<br>Default 값으로 설정                          <재부팅시 초기화x>
-  6) $~/.bashrc 에서 설정 확인
-    ![image](https://user-images.githubusercontent.com/48273803/69006021-0056df80-096d-11ea-9a04-4d1981c5c07c.png)
-  7) 설정 후 터미널 실행 시 [setupvars.sh] OpenVINO environment initialized 출력 확인 가능<br>![image](https://user-images.githubusercontent.com/48273803/69006055-4a3fc580-096d-11ea-811f-96cc205f94c0.png)
-  8) 현재 Raspberry Pi 사용자를 user 그룹에 추가<br>![image](https://user-images.githubusercontent.com/48273803/69006059-617eb300-096d-11ea-9c03-5617514e545a.png)
-  9) USB 포트 설치 <br>![image](https://user-images.githubusercontent.com/48273803/69006069-7e1aeb00-096d-11ea-9b60-e4ee7a96431f.png)
 
 # **Face Authentication**
 https://youtu.be/L7W-cCmu4bI
@@ -160,43 +109,16 @@ https://youtu.be/L7W-cCmu4bI
 3) 표준화(Normalization)
 4) 인식(Recognition)
 ## 2. Face Authentication 필요 패키지 및 원리
- 1) 필요 패키지 설치
-    * $pip3 install opencv-python <br>![image](https://user-images.githubusercontent.com/48273803/69006387-dfdd5400-0971-11ea-9d1b-9ee591ffb0c2.png)
-    * $pip3 install opencv-contrib-python<br>![image](https://user-images.githubusercontent.com/48273803/69006485-aeb15380-0972-11ea-8990-d55beb58a101.png)
-    * $pip3 install dlib <br>![image](https://user-images.githubusercontent.com/48273803/69006496-da343e00-0972-11ea-83c9-27c2d51b6970.png)
-    * $pip3 install face_recognition<br>![image](https://user-images.githubusercontent.com/48273803/69006510-fe901a80-0972-11ea-9bb5-54ce5b2d594e.png)
-    * $pip3 install flask<br>![image](https://user-images.githubusercontent.com/48273803/69006516-2bdcc880-0973-11ea-82fe-84910512d01e.png)
-2) Face Authentication 원리
+
+1) Face Authentication 원리
     * 얼굴만 있는 사진으로 얼굴 학습<br>
     ![image](https://user-images.githubusercontent.com/48273803/70610132-5d7d4280-1c46-11ea-84cc-11111c721056.png)
     * 사진 또는 동영상에서 얼굴 검출<br>![image](https://user-images.githubusercontent.com/48273803/69006985-e58b6780-097a-11ea-80ff-e6a7e5418be0.png)
     * Face LadMark<br>![image](https://user-images.githubusercontent.com/48273803/69006996-22575e80-097b-11ea-93b0-8040228f7853.png)<br>검출된 얼굴에서 68개의 LandMark 생성<br>
     ![image](https://user-images.githubusercontent.com/48273803/69007017-84b05f00-097b-11ea-87a0-6d7c33e5f355.png)
-       ```
-       import face_recognition
-        import cv2
-        import camera
-        import os
-        import numpy as np
-        import ser as cammotor
-       ```
-       ```
-        if min_value < 0.6:
-                        index = np.argmin(distances)
-                        name = self.known_face_names[index]
-                        self.__del__()
-                        cammotor.trackingmode()
-                        cammotor.cleanup()
-                        os.system("./object_start.sh")
-                    self.face_names.append(name)
-                    if name == "Unknown":
-                        cv2.imwrite('/home/pi/Unknown.jpg',frame)
-                        warning=open('/home/pi/workingDir/info.txt','w')
-                        warning.write("1")
-                        warning.close()
-       ```
+
    
-3) Face Recognition 결과
+2) Face Recognition 결과
     * KNOWN Directory 안의 이미지 파일로 인증
    ![image](https://user-images.githubusercontent.com/48273803/70610636-4559f300-1c47-11ea-842c-c3d6b42e8a1f.png)
    * Knowns Diretory 내에 .jpg 파일 읽어온 후 비교
@@ -224,103 +146,12 @@ https://youtu.be/L7W-cCmu4bI
 
       * SSD(Single Shot multibox Detector)
 ![image](https://user-images.githubusercontent.com/48273803/70621754-a096e000-1c5d-11ea-9200-a84cd3aee2a7.png)
-        * 테두리 조정을 위한 픽셀 및 특징 재추출을 하지 않는다.
-  3) 예외처리 및 필요한 동작 처리
-        ```
-          import sys
-          if sys.version_info.major < 3 or sys.version_info.minor < 4:
-            print("Please using python3.4 or greater!")
-            sys.exit(1)
-        import numpy as np
-        import cv2, io, time, argparse, re
-        from os import system
-        from os.path import isfile, join
-        from time import sleep
-        import multiprocessing as mp
-        import motor_test as motor
-        import os
-
-        try:
-            from armv7l.openvino.inference_engine import IENetwork, IEPlugin
-        except:
-            from openvino.inference_engine import IENetwork, IEPlugin
-        import heapq
-        import threading
-
-        lastresults = None
-        threads = []
-        processes = []
-        frameBuffer = None
-        results = None
-        fps = ""
-        detectfps = ""
-        framecount = 0
-        detectframecount = 0
-        time1 = 0
-        time2 = 0
-        cam = None
-        camera_width = 320
-        camera_height = 240
-        window_name = ""
-        ssd_detection_mode = 1
-        face_detection_mode = 0
-        elapsedtime = 0.0
-
-        LABELS = [['background',
-                   'aeroplane', 'bicycle', 'bird', 'boat',
-                   'bottle', 'bus', 'car', 'cat', 'chair',
-                   'cow', 'diningtable', 'dog', 'horse',
-                   'motorbike', 'person', 'pottedplant',
-                   'sheep', 'sofa', 'train', 'tvmonitor'],
-                  ['background', 'face']]
-
-        ```
-        ```
-           
-               if label_yd == 15:
-                   khx = int(((box_right-box_left)/2)+box_left)
-                   khy = int(((box_top-box_bottom)/2)+box_bottom)
-                   cv2.circle (img_cp, (int(((box_right-box_left)/2)+box_left), int(((box_top-box_bottom)/2)+box_bottom)) ,10, (255,0,0), -1)
-                   box_color = (255, 128, 0)
-                   box_thickness = 1
-                   cv2.rectangle(img_cp,(box_left, box_top), (box_right, box_bottom), box_color, box_thickness)
-
-                   label_background_color = (125, 175, 75)
-                   label_text_color = (255, 255, 255)
-                   label_size = cv2.getTextSize(label_text, cv2.FONT_HERSHEY_SIMPLEX, 0.5, 1)[0]
-                   label_left = box_left
-                   label_top = box_top - label_size[1]
-                   if (label_top < 1):
-                       label_top = 1
-                   label_right = label_left + label_size[0]
-                   label_bottom = label_top + label_size[1]
-
-                   cv2.rectangle(img_cp, (label_left - 1, label_top - 1), (label_right + 1, label_bottom + 1), label_background_color, -1)
-                   cv2.putText(img_cp, label_text, (label_left, label_bottom), cv2.FONT_HERSHEY_SIMPLEX, 0.5, label_text_color, 1)
-
-                   if 135 < khy and khy < 150 :
-                       if khx < 135 :
-                           motor.turnLeft()
-                       elif khx > 185 :
-                           motor.turnRight()
-                       else:
-                           motor.forward_1()
-                   elif 150 < khy :
-                       if khx < 135 :
-                           motor.turnLeft()
-                       elif khx > 185 :
-                           motor.turnRight()
-                       else:
-                           motor.forward_2()
-                   elif khy < 105 :
-                       motor.Reverse()
-                   else:
-                       motor.brake()
-        ```
+       
+ 
         <image src= "https://user-images.githubusercontent.com/48273803/70627566-ce822180-1c69-11ea-9515-ce6ddf9918e2.png" width="320" height="200">
 
   
-  4) 결과<br>
+  1) 결과<br>
     <image src= "https://user-images.githubusercontent.com/48273803/70621870-efdd1080-1c5d-11ea-9000-b8c98378b815.png" width="320" height="200">
 
 # **NLP**
@@ -329,12 +160,6 @@ https://youtu.be/L7W-cCmu4bI
   2) 불용어제거
   3) 어간추출
   4) 문서표현
-## 2. NLTK 환경구축
-* 자신의 python 환경에 맞게 pip/pip3 nltk 설치
-![image](https://user-images.githubusercontent.com/48273803/70631140-0e4c0780-1c70-11ea-8f6a-968d8681d80b.png)
-* 데이터셋 다운로드를 위해 nltk.download('all') 설치 (한 번만 설치하면 되므로 all 권장)<br>
-![image](https://user-images.githubusercontent.com/48273803/70633010-2cffcd80-1c73-11ea-8958-712b807a9e63.png)
-
 
 ### 토큰화(tokenize)
    * 문자열에서 공백을 기준으로 단어를 분리시키는 작업<br>
@@ -753,68 +578,6 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 ```
-## 3. App Security mode 구현
-
-* 1) SettingActivity.java 
-```
-//security mode 이벤트
-        radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                switch (i) {
-                    case R.id.sm_check1: //security Mode On
-                        sessionManager.SecurityMode(true);
-                        createNotificationChannel();
-                        new Thread() {
-                            public void run() {
-                                try {
-                                    while (sm1_radioButton.isChecked()) {
-                                        //서버 도메인 객체 생성
-                                        InetAddress serverAddr = InetAddress.getByName(getString(R.string.server_ip));
-                                        //UDP 통신을 위한 소켓
-                                        DatagramSocket socket = new DatagramSocket();
-                                        //UDP 통신을 위한 DatagramPacket 생성, 보내기
-                                        byte[] buf = ("Security Mode").getBytes();
-                                        DatagramPacket packet = new DatagramPacket(buf, buf.length, serverAddr, 5514);
-                                        socket.send(packet);
-                                        Log.d("Security Mode", "Data Send!!"); // 데이터 전송 확인을 위한 LOG
-                                        //서버로 부터 값을 받음
-                                        socket.receive(packet);
-                                        System.out.println(new String(packet.getData()));
-                                        //값이 "Security Mode" 이면
-                                        if (new String(packet.getData()).equals("Security Mode")) {
-                                            FTP_Connect(); //Raspberry Pi의 FTP Server에 접속
-                                            socket.close(); //소켓 통신 종료
-                                            Thread.sleep(3000); //Thread 3초간 멈춤
-                                        } else {
-                                            socket.close(); //소켓 통신 종료
-                                            Thread.sleep(3000); //Thread 3초간 멈춤
-                                        }
-                                    }
-                                } catch (Exception e) {
-                                    Log.e("UDP", "C: Error", e);
-                                }
-
-                            }
-                        }.start();
-                        break;
-
-                    case R.id.sm_check2:  //security Mode Off
-                        sessionManager.SecurityMode(false);
-                        break;
-                }
-            }
-        });
-    }
-```
-
-* 2)Deep Learning Pi에 socketServer.py
-
-![stop](https://user-images.githubusercontent.com/48273803/70632947-0f326880-1c73-11ea-89ca-66ef9b232698.PNG)
-
-* 3) Deep Learning Pi에 face_recog.py
-
-![face_recog](https://user-images.githubusercontent.com/48273803/70657828-f9876800-1c9f-11ea-82c4-962bf213495f.PNG)
 
 
 # **App Stop mode 구현**

@@ -19,8 +19,7 @@
 * ### 개발목적 : 움직이는 AI 음성 비서 스마트 애완견
 * ### 개발 일정 
 ![개발일정](https://user-images.githubusercontent.com/48273803/70620596-0cc41480-1c5b-11ea-8407-4fb4f3fadb30.PNG)
-* ### 개인 역할 
-![역할](https://user-images.githubusercontent.com/48273803/70611274-450e2780-1c48-11ea-91f0-d15300c1a71c.PNG)
+
 * ### 주요 기능 및 기술 <br>
   * ### 보안 모드 : 빈 집에서 침입자가 들어왔을 때 App 알림
   * ### CCTV : App에서 항상 LiveStreaming으로 확인 가능.
